@@ -1,0 +1,16 @@
+service: geoIp
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  environment:
+    API_KEY: ${file(./config.yml):API_KEY}
+
+functions:
+  locate:
+    handler: handler.locate
+    events:
+      - http:
+          path: locate
+          method: get
+          cors: true
