@@ -2,11 +2,7 @@
 
 const request = require('request');
 
-const supportedOrigins = [
-  'https://microapps.fwd.wf',
-  'https://monei.net',
-  'https://moonmail.io'
-];
+const supportedOrigins = process.env.ORIGINS.split(',');
 
 module.exports.locate = (event, context, callback) => {
   console.log(JSON.stringify(event, null, 2));

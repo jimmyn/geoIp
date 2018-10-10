@@ -5,6 +5,7 @@ provider:
   runtime: nodejs8.10
   environment:
     API_KEY: ${file(./config.yml):API_KEY}
+    ORIGINS: ${file(./config.yml):ORIGINS}
 
 functions:
   locate:
